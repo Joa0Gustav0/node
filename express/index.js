@@ -12,6 +12,9 @@ app.get("/username/:username", function (req, res) {
 app.get("/role/:role", function (req, res) {
   res.send(data.queryRole(req.params.role));
 });
+app.get("/2409secret-page2409", function (req, res) {
+  res.sendFile(__dirname + "/html/index.html")
+})
 
 //This is no longer needed even if it works 💡
 /* users.forEach((user, index) => {

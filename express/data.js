@@ -12,7 +12,7 @@ var qUsername = function (param) {
     }
   });
 
-  if (qUser === undefined) return "Username do not matches any user.";
+  if (qUser === undefined) return "Username does not match any user.";
   return JSON.stringify(qUser);
 };
 
@@ -23,7 +23,7 @@ var qRole = function (param) {
       qRole = user;
     }
   });
-  if (qRole === undefined) return "Role do not matches any user.";
+  if (qRole === undefined) return "Role does not match any user.";
   return JSON.stringify(qRole);
 };
 
