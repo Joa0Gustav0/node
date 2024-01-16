@@ -4,7 +4,7 @@ const users = [
   { username: "Paulo", role: "FullStack Developer" },
 ];
 
-var getUser = function (param) {
+var qUsername = function (param) {
   var qUser = undefined;
   users.forEach((user) => {
     if (user.username.toLowerCase() === param.toLowerCase()) {
@@ -12,15 +12,30 @@ var getUser = function (param) {
     }
   });
 
-  if (qUser === undefined) return "User not Found.";
+  if (qUser === undefined) return "Username do not matches any user.";
   return JSON.stringify(qUser);
 };
+
+var qRole = function (param) {
+  var qRole = undefined;
+  users.forEach((user) => {
+    if (user.role.toLowerCase() === param.toLowerCase()) {
+      qRole = user;
+    }
+  });
+  if (qRole === undefined) return "Role do not matches any user.";
+  return JSON.stringify(qRole);
+};
+
 
 module.exports = {
   users() {
     return JSON.stringify(users);
   },
-  queryUser(user) {
-    return getUser(user);
-  }
+  queryUsername(username) {
+    return qUsername(username);
+  },
+  queryRole(role) {
+    return qRole(role);
+  },
 };
